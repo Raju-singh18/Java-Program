@@ -1,6 +1,11 @@
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,15 +27,31 @@ public class LoginFrom extends JFrame {
     }
 
     void setComponents() {
+     
+        Cursor c1 = new Cursor(Cursor.HAND_CURSOR);
+        Cursor c2 = new Cursor(Cursor.CROSSHAIR_CURSOR);
+        Cursor c3 = new Cursor(Cursor.WAIT_CURSOR);
+        Font f1 = new Font("Times New Roman", Font.BOLD,28);
+        Font f2 = new Font("Callibri",Font.ITALIC, 22);
+
         l1 = new JLabel("Welcome to Coding Seekho");
+        l1.setFont(f1);
+        l1.setForeground(Color.RED);
         l2 = new JLabel("USERNAME");
         l3 = new JLabel("PASSWORD");
+        l3.setFont(f2);
+        l3.setForeground(Color.BLUE);
         l4 = new JLabel();
         t1 = new JTextField();
         t2 = new JPasswordField();
         b1 = new JButton("Login");
+        b1.setCursor(c1);
+        b1.setBackground(Color.CYAN);
         b2 = new JButton("Clear");
+        b2.setCursor(c2);
         b3 = new JButton("Add");
+        b3.setCursor(c3);
+
 
         setLayout(null);
 
@@ -44,7 +65,7 @@ public class LoginFrom extends JFrame {
         add(b2);
         add(b3);
 
-        l1.setBounds(100, 50, 300, 30);
+        l1.setBounds(100, 50, 350, 30);
         l2.setBounds(100, 200, 100, 30);
         l3.setBounds(100, 350, 100, 30);
         l4.setBounds(100, 550, 100, 30);
@@ -57,6 +78,7 @@ public class LoginFrom extends JFrame {
         b1.addActionListener(new Log());
         b2.addActionListener(new Clear());
         b3.addActionListener(new Add());
+        l2.addMouseListener(new MouseL());
 
     }
 
@@ -102,6 +124,24 @@ public class LoginFrom extends JFrame {
                 l4.setText("Please Enter a number only");
             }
 
+        }
+    }
+
+    class MouseL implements MouseListener{
+        public void mousePressed(MouseEvent e1){
+
+        }
+        public void mouseReleased(MouseEvent e1){
+
+        }
+        public void mouseExited(MouseEvent e1){
+
+        }
+        public void mouseClicked(MouseEvent e1){
+
+        }
+        public void mouseEntered(MouseEvent e1){
+          l2.setForeground(Color.GREEN);  
         }
     }
 }
