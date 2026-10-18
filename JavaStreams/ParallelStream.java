@@ -16,3 +16,5 @@ public class ParallelStream {
             .forEachOrdered(System.out::println);
     }
 }
+
+// splitIterator
