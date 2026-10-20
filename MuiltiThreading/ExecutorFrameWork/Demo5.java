@@ -34,5 +34,3 @@ public class Demo5 {
 
     }
 }
-
-// fork-join pool executor
